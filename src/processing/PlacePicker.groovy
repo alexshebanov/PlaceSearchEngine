@@ -1,10 +1,14 @@
 package processing
 
 class PlacePicker {
-    def responseObject
+    DataRetriever retriever
+    DataSorter sorter
+    def placesList = []
 
-    PlacePicker(responseObject) {
-        this.responseObject = responseObject
+    PlacePicker(DataRetriever retriever, DataSorter sorter) {
+        this.retriever = retriever
+        this.sorter = sorter
     }
+
 
 }

@@ -9,6 +9,6 @@ class GooglePlacesAPIResultChecker implements ResultChecker {
 
     @Override
     boolean available() {
-        return result.status.equals('OK')
+        return result.status == 'OK'
     }
 }
