@@ -1,10 +1,14 @@
 package API
 
 class GooglePlacesAPIRequest implements Request {
-    final def url
+    final RequestProperties requestProperties
 
     GooglePlacesAPIRequest(RequestProperties requestProperties) {
-        url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/' +
+        this.requestProperties = requestProperties
+    }
+
+    def url() {
+        def url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/' +
                 requestProperties.responseType + '?location=' +
                 requestProperties.geoLocation + '&rankby=distance&key=' +
                 requestProperties.APIKey

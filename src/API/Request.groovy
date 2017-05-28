@@ -1,5 +1,6 @@
 package API
 
 interface Request {
-    def url
+    final RequestProperties requestProperties
+    def url()
 }

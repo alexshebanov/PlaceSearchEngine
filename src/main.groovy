@@ -3,6 +3,8 @@ import API.GooglePlacesAPIResultChecker
 import API.RequestProperties
 import API.RequestSender
 import entity.ResultObject
+import processing.DataRetriever
+import processing.DataSorter
 import processing.PlacePicker
 
 def config = new ConfigSlurper().parse(new File('APIKey.groovy').toURL())
@@ -13,4 +15,5 @@ if (!(new GooglePlacesAPIResultChecker(response).available())) {
     return new ResultObject(result. status, null)
 }
 //TODO: make data handling
-def placePicker = new PlacePicker(response)
+def smth = new PlacePicker(new DataRetriever(new RequestSender(new GooglePlacesAPIRequest(requestProperties))),
+new DataSorter()).result()

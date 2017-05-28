@@ -10,5 +10,10 @@ class PlacePicker {
         this.sorter = sorter
     }
 
-
+    def result() {
+        def data = retriever.retrieve()
+        def results = sorter.sortedByDistanceResults(data, retriever.requestSender.request.requestProperties.geoLocation)
+        placesList.addAll(results)
+        println()
+    }
 }

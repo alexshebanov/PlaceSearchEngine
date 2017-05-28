@@ -10,7 +10,7 @@ class RequestSender {
     }
 
     def getResponse() {
-        def content = request.url.toURL().getText()
+        def content = request.url().toURL().getText()
         def result = new JsonSlurper().parseText(content)
     }
 }
