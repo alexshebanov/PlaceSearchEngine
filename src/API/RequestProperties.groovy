@@ -5,6 +5,7 @@ class RequestProperties {
     final def placesCount
     final def APIKey
     final def responseType
+    def nextPageToken
 
     RequestProperties(geoLocation, placesCount, APIKey, responseType) {
         this.geoLocation = geoLocation

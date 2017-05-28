@@ -12,5 +12,9 @@ class GooglePlacesAPIRequest implements Request {
                 requestProperties.responseType + '?location=' +
                 requestProperties.geoLocation + '&rankby=distance&key=' +
                 requestProperties.APIKey
+        if (requestProperties.nextPageToken != null)
+            url += ('&pagetoken=' + requestProperties.nextPageToken)
+        println()
+        return url
     }
 }
