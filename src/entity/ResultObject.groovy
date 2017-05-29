@@ -1,8 +1,8 @@
 package entity
 
 class ResultObject {
-    final def status
-    final def places = []
+    final String status
+    def places = []
 
     ResultObject(status, places) {
         this.status = status

@@ -1,19 +1,34 @@
 import API.GooglePlacesAPIRequest
-import API.GooglePlacesAPIResultChecker
+import API.GooglePlacesAPIResponseValidator
 import API.RequestProperties
 import API.RequestSender
-import entity.ResultObject
-import processing.DataRetriever
-import processing.DataSorter
+import groovy.json.JsonOutput
+import processing.DistanceCalculator
 import processing.PlacePicker
+import processing.ResultHandler
 
-def config = new ConfigSlurper().parse(new File('APIKey.groovy').toURL())
-def placesCount = 1
-def requestProperties = new RequestProperties(args[0], placesCount, config.googlePlacesAPIKey, 'json')
-def response = new RequestSender(new GooglePlacesAPIRequest(requestProperties)).getResponse()
-if (!(new GooglePlacesAPIResultChecker(response).available())) {
-    return new ResultObject(result. status, null)
+def config = new ConfigSlurper().parse(new File('properties.groovy').toURL())
+
+def cliBuilder = new CliBuilder(usage: 'main -l location -c count')
+cliBuilder.with {
+    l(longOpt: 'location', 'Location', args: 1, required: true)
+    c(longOpt: 'count', 'PlacesCount', args: 1, required: false)
 }
-//TODO: make data handling
-def smth = new PlacePicker(new DataRetriever(new RequestSender(new GooglePlacesAPIRequest(requestProperties))),
-new DataSorter()).result()
+
+def opt = cliBuilder.parse(args)
+def location = opt.l
+def count = opt.c
+if (!count) count = 1
+
+def requestProperties = new RequestProperties(location, config.googlePlacesAPIKey, config.GooglePlacesUrlBase)
+
+def request = new GooglePlacesAPIRequest(requestProperties)
+
+def sortedData = new PlacePicker(request, new RequestSender(),
+        new DistanceCalculator(), new GooglePlacesAPIResponseValidator()).result()
+
+def result = new ResultHandler().getResult(sortedData, count as int)
+
+def JSONOutput = JsonOutput.toJson(result)
+
+println()

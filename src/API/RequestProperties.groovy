@@ -1,16 +1,13 @@
 package API
 
 class RequestProperties {
-    final def geoLocation
-    final def placesCount
-    final def APIKey
-    final def responseType
-    def nextPageToken
+    final String geoLocation
+    final String APIKey
+    final String urlBase
 
-    RequestProperties(geoLocation, placesCount, APIKey, responseType) {
+    RequestProperties(String geoLocation, String APIKey, String urlBase) {
         this.geoLocation = geoLocation
-        this.placesCount = placesCount
         this.APIKey = APIKey
-        this.responseType = responseType
+        this.urlBase = urlBase
     }
 }
