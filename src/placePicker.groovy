@@ -9,13 +9,18 @@ import processing.ResultHandler
 
 def config = new ConfigSlurper().parse(new File('properties.groovy').toURL())
 
-def cliBuilder = new CliBuilder(usage: 'main -l location -c count')
+def cliBuilder = new CliBuilder(usage: 'placePicker -l location -c count',
+        header: '\nAvailable options (use -h for help):\n')
 cliBuilder.with {
-    l(longOpt: 'location', 'Location', args: 1, required: true)
-    c(longOpt: 'count', 'PlacesCount', args: 1, required: false)
+    l(longOpt: 'location', 'Location : \'longitude,latitude\' (without space after comma)' , args: 1, required: true)
+    c(longOpt: 'count', 'PlacesCount (not required. 1 is default value)', args: 1, required: false)
+    h(longOpt: 'help', 'Usage Information', required: false)
 }
 
 def opt = cliBuilder.parse(args)
+if (!opt) return
+if (opt.h) cliBuilder.usage()
+
 def location = opt.l
 def count = opt.c
 if (!count) count = 1
@@ -30,5 +35,3 @@ def sortedData = new PlacePicker(request, new RequestSender(),
 def result = new ResultHandler().getResult(sortedData, count as int)
 
 def JSONOutput = JsonOutput.toJson(result)
-
-println()

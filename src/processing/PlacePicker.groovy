@@ -29,7 +29,6 @@ class PlacePicker {
             def results = sorter.dataWithCalculatedDistance(data, request.properties.location)
             placesList.addAll(results)
             def nextPageToken = data.next_page_token
-//            request.requestProperties.nextPageToken = nextPageToken
             request.properties.pagetoken = nextPageToken
             sleep(2000)
         }
