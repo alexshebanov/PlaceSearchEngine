@@ -8,12 +8,12 @@ class DistanceCalculator {
 
     def dataWithCalculatedDistance(data, location) {
         def results = []
-        for (def d : data.results) {
-            def lat = (location as String).split(",")[0].toDouble()
-            def lng = (location as String).split(",")[1].toDouble()
-            def distance = sqrt(pow(lat - d.geometry.location.lat as double, 2) +
-                    pow(lng - d.geometry.location.lng as double, 2))
-            results.add(new Place(d.name, d.vicinity, distance, d.place_id))
+        for (def result : data.results) {
+            def lat = location.latitude
+            def lng = location.longitude
+            def distance = sqrt(pow(lat - result.geometry.location.lat as double, 2) +
+                    pow(lng - result.geometry.location.lng as double, 2))
+            results.add(new Place(result.name, result.vicinity, distance, result.place_id))
         }
         return results
     }
