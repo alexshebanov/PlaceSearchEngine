@@ -3,6 +3,7 @@ package processing
 import API.Request
 import API.RequestSender
 import API.ResponseValidator
+import entity.Location
 import entity.ResultObject
 
 class PlacePicker {
@@ -10,30 +11,43 @@ class PlacePicker {
     RequestSender requestSender
     DistanceCalculator sorter
     ResponseValidator validator
-    def placesList = []
+    DataIterator iterator
+    Location location
+    def placesList
 
-    PlacePicker(Request request, RequestSender requestSender, DistanceCalculator sorter, ResponseValidator validator) {
+    PlacePicker(Request request, RequestSender requestSender, DistanceCalculator sorter, ResponseValidator validator,
+                DataIterator iterator) {
         this.request = request
         this.requestSender = requestSender
         this.sorter = sorter
         this.validator = validator
+        this.iterator = iterator
+        placesList = []
     }
 
     def result() {
-        /*We send only 3 requests, cause Google Place API responds with
-        only 60 unique places (20 places on each page)*/
-        for (int i = 0; i < 3; i++) {
-            def data = requestSender.getResponse(request)
+
+        def data = iterator.next()
+        while (iterator.hasNext()) {
             if (!validator.available(data))
-                return new ResultObject(data.status, placesList)
+                break
             def results = sorter.dataWithCalculatedDistance(data, request.properties.location)
             placesList.addAll(results)
-            def nextPageToken = data.next_page_token
-            request.properties.pagetoken = nextPageToken
             sleep(2000)
+            data = iterator.next()
         }
+
+        //Last iteration (fix this)
+        if (validator.available(data)) {
+            def results = sorter.dataWithCalculatedDistance(data, request.properties.location)
+            placesList.addAll(results)
+        }
+
         placesList.sort { it.distance }
         placesList.unique { it.placeId }
-        return new ResultObject('OK', placesList)
+
+        if (!placesList.isEmpty())
+            return new ResultObject('OK', placesList)
+        else return new ResultObject(data.status, placesList)
     }
 }

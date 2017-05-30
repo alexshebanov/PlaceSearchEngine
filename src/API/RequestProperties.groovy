@@ -1,12 +1,14 @@
 package API
 
+import entity.Location
+
 class RequestProperties {
-    final String geoLocation
+    final Location location
     final String APIKey
     final String urlBase
 
-    RequestProperties(String geoLocation, String APIKey, String urlBase) {
-        this.geoLocation = geoLocation
+    RequestProperties(Location location, String APIKey, String urlBase) {
+        this.location = location
         this.APIKey = APIKey
         this.urlBase = urlBase
     }

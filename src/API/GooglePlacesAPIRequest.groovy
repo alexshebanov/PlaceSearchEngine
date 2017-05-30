@@ -7,7 +7,7 @@ class GooglePlacesAPIRequest implements Request {
     GooglePlacesAPIRequest(RequestProperties requestProperties) {
         properties = [:]
         urlBase = requestProperties.urlBase
-        properties.put('location', requestProperties.geoLocation)
+        properties.put('location', requestProperties.location.toString())
         properties.put('key', requestProperties.APIKey)
         properties.put('pagetoken' , '')
     }
