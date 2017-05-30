@@ -1,4 +1,5 @@
 import API.GooglePlacesAPIRequest
+import API.GooglePlacesAPIResponse
 import API.GooglePlacesAPIResponseValidator
 import API.RequestProperties
 import API.RequestSender
@@ -50,7 +51,7 @@ def request = new GooglePlacesAPIRequest(requestProperties)
 
 def sortedData = new PlacePicker(
         new DistanceCalculator(), new GooglePlacesAPIResponseValidator(),
-        new GooglePlacesIterator(request, new RequestSender())).result()
+        new GooglePlacesIterator(request, new GooglePlacesAPIResponse(request, new RequestSender())), location).result()
 
 def result = new ResultHandler().getResult(sortedData, count as int)
 

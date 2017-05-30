@@ -2,28 +2,29 @@ package processing
 
 import API.Request
 import API.RequestSender
+import API.Response
 
 class GooglePlacesIterator implements DataIterator {
     Request request
-    RequestSender requestSender
+    Response response
     def data
 
-    GooglePlacesIterator(Request request, RequestSender requestSender) {
+    GooglePlacesIterator(Request request, Response response) {
         this.request = request
-        this.requestSender = requestSender
+        this.response = response
     }
 
     @Override
     boolean hasNext() {
-        if ((data.next_page_token != null))
+        if ((response.nextPageToken(data) != null))
             return true
         else return false
     }
 
     @Override
     def next() {
-        data = requestSender.getResponse(request)
-        def nextPageToken = data.next_page_token
+        data = response.data()
+        def nextPageToken = response.nextPageToken(data)
         request.properties.pagetoken = nextPageToken
         return data
     }

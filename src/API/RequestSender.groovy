@@ -6,6 +6,6 @@ class RequestSender {
 
     def getResponse(Request request) {
         def content = request.url().toURL().getText()
-        def result = new JsonSlurper().parseText(content)
+        new JsonSlurper().parseText(content)
     }
 }

@@ -1,26 +1,27 @@
 package processing
 
+
 import API.ResponseValidator
 import entity.Location
-import entity.ResultObject
 
 class PlacePicker {
     DistanceCalculator sorter
     ResponseValidator validator
     DataIterator iterator
     def placesList
+    Location location
 
     PlacePicker(DistanceCalculator sorter, ResponseValidator validator,
-                DataIterator iterator) {
+                DataIterator iterator, Location location) {
 
         this.sorter = sorter
         this.validator = validator
         this.iterator = iterator
+        this.location = location
         placesList = []
     }
 
     def result() {
-        def location = new Location(iterator.request.properties.location)
         def data = iterator.next()
         while (iterator.hasNext()) {
             if (!validator.available(data))
@@ -40,8 +41,6 @@ class PlacePicker {
         placesList.sort { it.distance }
         placesList.unique { it.placeId }
 
-        if (!placesList.isEmpty())
-            return new ResultObject('OK', placesList)
-        else return new ResultObject(data.status, placesList)
+        return placesList
     }
 }
