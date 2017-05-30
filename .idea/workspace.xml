@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12e35573-735d-4195-bd72-2b1ca29a61be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity/Location.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/API/GooglePlacesAPIRequest.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/API/GooglePlacesAPIRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/API/RequestProperties.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/API/RequestProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker$_run_closure1.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/placePicker$_run_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/placePicker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure1.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure2.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker.class" />
+    <list default="true" id="12e35573-735d-4195-bd72-2b1ca29a61be" name="Default" comment="Iterator was added">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/processing/DataIterator.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/processing/GooglePlacesIterator.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/API/GooglePlacesAPIRequest.groovy" afterPath="$PROJECT_DIR$/src/API/GooglePlacesAPIRequest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/API/RequestProperties.groovy" afterPath="$PROJECT_DIR$/src/API/RequestProperties.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/placePicker.groovy" afterPath="$PROJECT_DIR$/src/placePicker.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processing/PlacePicker.groovy" afterPath="$PROJECT_DIR$/src/processing/PlacePicker.groovy" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -823,12 +813,20 @@
       <workItem from="1495798150452" duration="12697000" />
       <workItem from="1496038457532" duration="15453000" />
       <workItem from="1496057383482" duration="12475000" />
-      <workItem from="1496124566235" duration="10274000" />
+      <workItem from="1496124566235" duration="10471000" />
     </task>
+    <task id="LOCAL-00001" summary="Iterator was added">
+      <created>1496134881553</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1496134881553</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54360000" />
+    <option name="totallyTimeSpent" value="54557000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -841,7 +839,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -858,7 +855,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24851751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24851751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -918,6 +915,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Iterator was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iterator was added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
