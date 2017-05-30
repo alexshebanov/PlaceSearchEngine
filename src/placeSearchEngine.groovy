@@ -10,7 +10,7 @@ import processing.GooglePlacesIterator
 import processing.PlacePicker
 import processing.ResultHandler
 
-def config = new ConfigSlurper().parse(new File('properties.groovy').toURL())
+def config = new ConfigSlurper().parse(new File('properties.groovy').toURI().toURL())
 
 def cliBuilder = new CliBuilder(usage: 'placePicker -l location -c count',
         header: '\nAvailable options (use -h for help):\n')

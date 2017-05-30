@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12e35573-735d-4195-bd72-2b1ca29a61be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker$_run_closure1.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/placePicker$_run_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/placePicker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/DistanceCalculator.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/DistanceCalculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure1.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure2.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker$_result_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker.class" afterPath="$PROJECT_DIR$/out/production/GeoProject/processing/PlacePicker.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker$_run_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/GeoProject/placePicker.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/placePicker.groovy" afterPath="$PROJECT_DIR$/src/placeSearchEngine.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/placePicker.groovy" afterPath="$PROJECT_DIR$/src/placePicker.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processing/DistanceCalculator.groovy" afterPath="$PROJECT_DIR$/src/processing/DistanceCalculator.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processing/PlacePicker.groovy" afterPath="$PROJECT_DIR$/src/processing/PlacePicker.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processing/ResultHandler.groovy" afterPath="$PROJECT_DIR$/src/processing/ResultHandler.groovy" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="placePicker.groovy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/placePicker.groovy">
+      <file leaf-file-name="placeSearchEngine.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/placeSearchEngine.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="56" column="42" lean-forward="true" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+            <state relative-caret-position="502">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -51,11 +46,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataIterator.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processing/DataIterator.groovy">
+      <file leaf-file-name="GooglePlacesAPIRequest.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIRequest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="126">
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GooglePlacesAPIResponseValidator.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIResponseValidator.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Request.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/API/Request.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -73,24 +88,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResultHandler.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processing/ResultHandler.groovy">
+      <file leaf-file-name="DataIterator.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/processing/DataIterator.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="54">
+              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlacePicker.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processing/PlacePicker.groovy">
+      <file leaf-file-name="ResultHandler.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/processing/ResultHandler.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="e#20#48#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,21 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Location.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity/Location.groovy">
+      <file leaf-file-name="ResponseValidator.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/API/ResponseValidator.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestSender.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/API/RequestSender.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -179,10 +182,8 @@
         <option value="$PROJECT_DIR$/src/API/ResultValidator.groovy" />
         <option value="$PROJECT_DIR$/src/processing/DataSorter.groovy" />
         <option value="$PROJECT_DIR$/src/processing/ResultHandler.java" />
-        <option value="$PROJECT_DIR$/src/processing/ResultHandler.groovy" />
         <option value="$PROJECT_DIR$/src/APIKey.groovy" />
         <option value="$PROJECT_DIR$/src/API/GooglePlacesAPIResultValidator.groovy" />
-        <option value="$PROJECT_DIR$/src/API/RequestSender.groovy" />
         <option value="$PROJECT_DIR$/src/API/Request.groovy" />
         <option value="$PROJECT_DIR$/src/API/ResponseValidator.groovy" />
         <option value="$PROJECT_DIR$/src/entity/ResultObject.groovy" />
@@ -198,6 +199,9 @@
         <option value="$PROJECT_DIR$/src/processing/DistanceCalculator.groovy" />
         <option value="$PROJECT_DIR$/src/entity/JsonOutputObject.groovy" />
         <option value="$PROJECT_DIR$/src/placePicker.groovy" />
+        <option value="$PROJECT_DIR$/src/API/RequestSender.groovy" />
+        <option value="$PROJECT_DIR$/src/processing/ResultHandler.groovy" />
+        <option value="$PROJECT_DIR$/src/placeSearchEngine.groovy" />
       </list>
     </option>
   </component>
@@ -361,9 +365,9 @@
   <component name="RunManager" selected="Groovy.main">
     <configuration default="false" name="main" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="GeoProject" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/placePicker.groovy" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/placeSearchEngine.groovy" />
       <setting name="vmparams" value="" />
-      <setting name="params" value="-l 48.458474,35.056748" />
+      <setting name="params" value="-l 48.460258,35.047202 -c 10" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
       <setting name="debug" value="false" />
       <method />
@@ -811,7 +815,7 @@
       <workItem from="1495798150452" duration="12697000" />
       <workItem from="1496038457532" duration="15453000" />
       <workItem from="1496057383482" duration="12475000" />
-      <workItem from="1496124566235" duration="15491000" />
+      <workItem from="1496124566235" duration="21003000" />
     </task>
     <task id="LOCAL-00001" summary="Iterator was added">
       <created>1496134881553</created>
@@ -827,11 +831,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496135043766</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Input exceptions were caught">
+      <created>1496140107976</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1496140107976</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59577000" />
+    <option name="totallyTimeSpent" value="65089000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -855,7 +866,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27726808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -867,7 +878,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -924,14 +935,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Iterator was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iterator was added" />
+    <MESSAGE value="Input exceptions were caught" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input exceptions were caught" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/placeSearchEngine.groovy</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="108" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -940,14 +960,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entity/ResultObject.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Place.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1001,7 +1013,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/placePicker.groovy">
+    <entry file="file://$PROJECT_DIR$/src/placeSearchEngine.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
@@ -1077,7 +1089,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/placePicker.groovy">
+    <entry file="file://$PROJECT_DIR$/src/placeSearchEngine.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1121,42 +1133,10 @@
     <entry file="file://$PROJECT_DIR$/src/API/PlaceParser.groovy" />
     <entry file="file://$PROJECT_DIR$/src/processing/ResultHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/processing/DataRetriever.groovy" />
-    <entry file="file://$PROJECT_DIR$/src/API/ResponseValidator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Place.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/API/Request.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIResponseValidator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIRequest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1185,32 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/processing/DataIterator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processing/DistanceCalculator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="e#20#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processing/ResultHandler.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/JsonOutputObject.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1219,19 +1173,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/ResultObject.groovy">
+    <entry file="file://$PROJECT_DIR$/src/API/RequestSender.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="72">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/API/RequestSender.groovy">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/io/File.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="2772">
+          <caret line="206" column="65" lean-forward="true" selection-start-line="206" selection-start-column="65" selection-end-line="206" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processing/PlacePicker.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <folding>
+            <element signature="e#20#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,20 +1209,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/processing/PlacePicker.groovy">
+    <entry file="file://$PROJECT_DIR$/src/processing/DistanceCalculator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding>
-            <element signature="e#20#48#0" expanded="true" />
+            <element signature="e#20#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/placePicker.groovy">
+    <entry file="file://$PROJECT_DIR$/src/processing/DataIterator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="56" column="42" lean-forward="true" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        <state relative-caret-position="54">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/ResultObject.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/ResponseValidator.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIResponseValidator.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/Request.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/GooglePlacesAPIRequest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processing/ResultHandler.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/placeSearchEngine.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
