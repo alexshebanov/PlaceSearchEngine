@@ -1,4 +1,4 @@
-package API
+package interfaces
 
 interface ResponseValidator {
     boolean available(result)

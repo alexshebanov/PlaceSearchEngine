@@ -1,7 +1,7 @@
 package processing
 
 
-import API.ResponseValidator
+import interfaces.ResponseValidator
 import entity.Location
 
 class PlacePicker {
@@ -23,6 +23,7 @@ class PlacePicker {
 
     def result() {
         def data = iterator.next()
+
         while (iterator.hasNext()) {
             if (!validator.available(data))
                 break

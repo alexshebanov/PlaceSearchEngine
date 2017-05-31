@@ -1,4 +1,6 @@
-package API
+package GooglePlacesAPI
+
+import interfaces.ResponseValidator
 
 class GooglePlacesAPIResponseValidator implements ResponseValidator {
 

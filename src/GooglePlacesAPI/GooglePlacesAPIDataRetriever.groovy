@@ -1,0 +1,4 @@
+package GooglePlacesAPI
+
+class GooglePlacesAPIDataRetriever {
+}

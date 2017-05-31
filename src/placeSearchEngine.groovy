@@ -1,8 +1,7 @@
-import API.GooglePlacesAPIRequest
-import API.GooglePlacesAPIResponse
-import API.GooglePlacesAPIResponseValidator
-import API.RequestProperties
-import API.RequestSender
+import GooglePlacesAPI.GooglePlacesAPIRequestURL
+import GooglePlacesAPI.GooglePlacesAPIRequestSender
+import GooglePlacesAPI.GooglePlacesAPIResponseValidator
+import GooglePlacesAPI.RequestProperties
 import entity.Location
 import entity.ResultObject
 import groovy.json.JsonOutput
@@ -47,11 +46,11 @@ else {
 
 def requestProperties = new RequestProperties(location, config.googlePlacesAPIKey, config.GooglePlacesUrlBase)
 
-def request = new GooglePlacesAPIRequest(requestProperties)
+def request = new GooglePlacesAPIRequestURL(requestProperties)
 
 def sortedData = new PlacePicker(
         new DistanceCalculator(), new GooglePlacesAPIResponseValidator(),
-        new GooglePlacesIterator(request, new GooglePlacesAPIResponse(request, new RequestSender())), location).result()
+        new GooglePlacesIterator(request, new GooglePlacesAPIRequestSender()), location).result()
 
 def result = new ResultHandler().getResult(sortedData, count as int)
 
