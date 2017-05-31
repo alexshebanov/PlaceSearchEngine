@@ -1,13 +1,13 @@
 package GooglePlacesAPI
 
-import interfaces.RequestURL
+import interfaces.GETRequest
 
-class GooglePlacesAPIRequestURL implements RequestURL {
+class GooglePlacesAPIGETRequest implements GETRequest {
     final String urlBase
     final def properties
     String nextPageToken
 
-    GooglePlacesAPIRequestURL(RequestProperties requestProperties) {
+    GooglePlacesAPIGETRequest(RequestProperties requestProperties) {
         properties = [:]
         urlBase = requestProperties.urlBase
         properties.put('location', requestProperties.location.toString())
@@ -15,7 +15,7 @@ class GooglePlacesAPIRequestURL implements RequestURL {
         nextPageToken = ''
     }
 
-    GooglePlacesAPIRequestURL(GooglePlacesAPIRequestURL previousURL, String nextPageToken) {
+    GooglePlacesAPIGETRequest(GooglePlacesAPIGETRequest previousURL, String nextPageToken) {
         urlBase = previousURL.urlBase
         properties = previousURL.properties
         this.nextPageToken = nextPageToken

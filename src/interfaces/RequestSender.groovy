@@ -1,5 +1,5 @@
 package interfaces
 
 interface RequestSender {
-    def getResponse(RequestURL request)
+    def getResponse(GETRequest request)
 }

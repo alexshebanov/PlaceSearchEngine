@@ -1,5 +1,5 @@
 package interfaces
 
-interface RequestURL {
+interface GETRequest {
     String url()
 }

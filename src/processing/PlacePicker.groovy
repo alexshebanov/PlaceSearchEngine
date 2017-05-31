@@ -3,6 +3,7 @@ package processing
 
 import interfaces.ResponseValidator
 import entity.Location
+import resultHandling.TemporaryResult
 
 class PlacePicker {
     DistanceCalculator sorter
@@ -23,6 +24,7 @@ class PlacePicker {
 
     def result() {
         def data = iterator.next()
+        def status = data.status
 
         while (iterator.hasNext()) {
             if (!validator.available(data))
@@ -31,9 +33,9 @@ class PlacePicker {
             placesList.addAll(results)
             sleep(2000)
             data = iterator.next()
+            status = data.status
         }
 
-        //Last iteration
         if (validator.available(data)) {
             def results = sorter.dataWithCalculatedDistance(data, location)
             placesList.addAll(results)
@@ -42,6 +44,6 @@ class PlacePicker {
         placesList.sort { it.distance }
         placesList.unique { it.placeId }
 
-        return placesList
+        return new TemporaryResult(status, placesList)
     }
 }

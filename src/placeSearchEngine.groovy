@@ -1,18 +1,19 @@
-import GooglePlacesAPI.GooglePlacesAPIRequestURL
+import GooglePlacesAPI.GooglePlacesAPIDataRetriever
+import GooglePlacesAPI.GooglePlacesAPIGETRequest
 import GooglePlacesAPI.GooglePlacesAPIRequestSender
 import GooglePlacesAPI.GooglePlacesAPIResponseValidator
 import GooglePlacesAPI.RequestProperties
 import entity.Location
-import entity.ResultObject
 import groovy.json.JsonOutput
 import processing.DistanceCalculator
-import processing.GooglePlacesIterator
+import processing.PlacesIterator
 import processing.PlacePicker
-import processing.ResultHandler
+import resultHandling.ResultHandler
+import resultHandling.ResultObject
 
 def config = new ConfigSlurper().parse(new File('properties.groovy').toURI().toURL())
 
-def cliBuilder = new CliBuilder(usage: 'placePicker -l location -c count',
+def cliBuilder = new CliBuilder(usage: 'placeSearchEngine -l location -c count',
         header: '\nAvailable options (use -h for help):\n')
 cliBuilder.with {
     l(longOpt: 'location', 'Location : \'longitude,latitude\' (without space after comma)', args: 1, required: true)
@@ -24,34 +25,32 @@ def opt = cliBuilder.parse(args)
 if (!opt) return
 if (opt.h) cliBuilder.usage()
 
-def location
+
+
+def locationParameter = opt.l
+def latitude, longitude
 try {
-    location = new Location(opt.l)
+    latitude = locationParameter.split(",")[0].toDouble()
+    longitude = locationParameter.split(",")[1].toDouble()
 } catch (RuntimeException e) {
-    println('error: Invalid location parameter')
-    return JsonOutput.toJson(new ResultObject('INVALID REQUEST', null))
+    println('error : Wrong parameters')
+    return new ResultObject('BAD_REQUEST', null)
 }
+def location = new Location(latitude, longitude)
 
 def count = opt.c
-if (!count)
-    count = 1
-else {
-    try {
-        int countValue = count.toInteger()
-    } catch (NumberFormatException e) {
-        println('error: Invalid count value')
-        return JsonOutput.toJson(new ResultObject('INVALID REQUEST', null))
-    }
-}
+if (!count) count = 1
 
-def requestProperties = new RequestProperties(location, config.googlePlacesAPIKey, config.GooglePlacesUrlBase)
+def requestProperties = new RequestProperties(location,
+        config.googlePlacesAPIKey, config.GooglePlacesUrlBase)
 
-def request = new GooglePlacesAPIRequestURL(requestProperties)
+def request = new GooglePlacesAPIGETRequest(requestProperties)
 
 def sortedData = new PlacePicker(
         new DistanceCalculator(), new GooglePlacesAPIResponseValidator(),
-        new GooglePlacesIterator(request, new GooglePlacesAPIRequestSender()), location).result()
+        new PlacesIterator(new GooglePlacesAPIDataRetriever(request, new GooglePlacesAPIRequestSender())), location).result()
 
 def result = new ResultHandler().getResult(sortedData, count as int)
 
 def JSONOutput = JsonOutput.toJson(result)
+
