@@ -1,5 +1,4 @@
 package interfaces
 
 interface ReceivedData {
-
 }

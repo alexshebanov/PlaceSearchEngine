@@ -1,5 +1,6 @@
 package processing
 
+import interfaces.DataIterator
 import interfaces.DataRetriever
 import interfaces.ReceivedData
 

@@ -1,4 +1,4 @@
-package processing
+package interfaces
 
 interface DataIterator {
     boolean hasNext()

@@ -1,20 +1,19 @@
 package processing
 
-
-import interfaces.ResponseValidator
+import interfaces.DataIterator
+import interfaces.DataValidator
 import entity.Location
 import resultHandling.TemporaryResult
 
 class PlacePicker {
     DistanceCalculator sorter
-    ResponseValidator validator
+    DataValidator validator
     DataIterator iterator
     def placesList
     Location location
 
-    PlacePicker(DistanceCalculator sorter, ResponseValidator validator,
+    PlacePicker(DistanceCalculator sorter, DataValidator validator,
                 DataIterator iterator, Location location) {
-
         this.sorter = sorter
         this.validator = validator
         this.iterator = iterator
@@ -27,7 +26,7 @@ class PlacePicker {
         def status = data.status
 
         while (iterator.hasNext()) {
-            if (!validator.available(data))
+            if (!validator.valid(data))
                 break
             def results = sorter.dataWithCalculatedDistance(data, location)
             placesList.addAll(results)
@@ -36,7 +35,7 @@ class PlacePicker {
             status = data.status
         }
 
-        if (validator.available(data)) {
+        if (validator.valid(data)) {
             def results = sorter.dataWithCalculatedDistance(data, location)
             placesList.addAll(results)
         }

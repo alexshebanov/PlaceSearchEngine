@@ -25,8 +25,6 @@ def opt = cliBuilder.parse(args)
 if (!opt) return
 if (opt.h) cliBuilder.usage()
 
-
-
 def locationParameter = opt.l
 def latitude, longitude
 try {
@@ -53,4 +51,5 @@ def sortedData = new PlacePicker(
 def result = new ResultHandler().getResult(sortedData, count as int)
 
 def JSONOutput = JsonOutput.toJson(result)
+
 

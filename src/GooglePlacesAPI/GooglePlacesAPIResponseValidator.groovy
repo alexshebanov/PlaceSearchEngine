@@ -1,11 +1,11 @@
 package GooglePlacesAPI
 
-import interfaces.ResponseValidator
+import interfaces.DataValidator
 
-class GooglePlacesAPIResponseValidator implements ResponseValidator {
+class GooglePlacesAPIResponseValidator implements DataValidator {
 
     @Override
-    boolean available(result) {
+    boolean valid(result) {
         return result.status == 'OK'
     }
 }
